@@ -1,0 +1,59 @@
+package a.b.c.kos.mem.dao;
+
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+
+import com.sun.corba.se.pept.transport.Connection;
+
+import a.b.c.kos.mem.vo.MemVO;
+
+
+
+
+public class MemDAOImpl implements MemDAO {
+
+	// 회원 전체조회
+	@Override
+	public ArrayList<MemVO> memSelectAll(MemVO mvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	// 회원 조건 조회
+	@Override
+	public ArrayList<MemVO> memSelect(MemVO mvo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	// 회원 입력
+	@Override
+	public boolean memInsert(MemVO mvo) {
+		
+		Connection conn = null;
+		PreparedStatement pstm = null; // PreparedStatement 인터페이스 : 관계형 데이터베이스에 대한 매개변수화된 sql로 사용됨. 
+		
+		int nCnt = 0;
+		boolean bool = false;
+		
+		try {
+			conn = kosConnectivity.getConnection();
+			syso
+		}
+	}
+
+	// 회원 수정
+	@Override
+	public boolean memUpdate(MemVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	// 회원 삭제
+	@Override
+	public boolean memDelete(MemVO mvo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
