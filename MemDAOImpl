@@ -81,6 +81,20 @@ public class MemDAOImpl implements MemDAO {
 	@Override
 	public ArrayList<MemVO> memSelect(MemVO mvo) {
 		// TODO Auto-generated method stub
+		logger.info("MemDAOImpl memSelect() 함수 진입 >>> : ");
+		
+		Connection conn = null;
+		PreparedStatrment pstmt = null;
+		ResultSet rsRs = null;
+		
+		ArrayList<MemVO> aList = null;
+		
+		try {
+			conn = KosCennectivity.getConnection();
+			String sql = MemQueryMap.getMemSelectQuery();
+			pstmt = conn.prepareStatement(sql);
+			logger.info("조건조회 >>> : \ㅡ");
+		}
 		return null;
 	}
 
@@ -131,7 +145,7 @@ public class MemDAOImpl implements MemDAO {
 			KosConnectivity.conClose(conn, pstmt);
 		}catch(Exception e) {
 			//System.out.println("입력 디비연동에 문제가 생겼습니다. >>> : " + e);
-			logger.info("디비연결 또는 쿼리에서 문제가 생겼네요 >>> : \n" + e.getMessage());
+			logger.info("디비연결 또는 쿼리에서 문제가 생김 >>> : \n" + e.getMessage());
 		}finally {
 			try {
 				KosConnectivity.conClose(conn, pstmt);				
